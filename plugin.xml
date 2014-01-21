@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.8"?>
+<plugin>
+
+  <extension point="org.eclipse.ui.menus">
+    <menuContribution locationURI="popup:org.eclipse.jdt.ui.PackageExplorer">
+      <command commandId="com.dadabeatnik.revealfile.command"
+        label="Reveal in Finder" style="push">
+         <visibleWhen
+               checkEnabled="false">
+            <systemTest
+                  property="osgi.os"
+                  value="macosx">
+            </systemTest>
+         </visibleWhen>
+      </command>
+      <command
+            commandId="com.dadabeatnik.revealfile.command"
+            label="Reveal in Explorer"
+            style="push">
+         <visibleWhen
+               checkEnabled="false">
+            <systemTest
+                  property="osgi.os"
+                  value="win32">
+            </systemTest>
+         </visibleWhen>
+      </command>
+    </menuContribution>
+  </extension>
+  <extension point="org.eclipse.ui.commands">
+    <command defaultHandler="com.dadabeatnik.revealfile.MenuHandler"
+      id="com.dadabeatnik.revealfile.command" name="Reveal in File System">
+    </command>
+  </extension>
+
+
+</plugin>

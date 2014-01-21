@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Reveal File
+Bundle-SymbolicName: com.dadabeatnik.revealfile;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Dada Beatnik
+Require-Bundle: org.eclipse.core.resources,
+ org.eclipse.core.runtime,
+ org.eclipse.core.expressions,
+ org.eclipse.jdt.core,
+ org.eclipse.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
