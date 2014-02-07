@@ -61,12 +61,15 @@ public class MenuHandler extends AbstractHandler {
     }
     
     private void open(File file) {
+        String s = file.getAbsolutePath();
+        s = "file:///" + s.replaceAll(" ", "%20");  //$NON-NLS-1$//$NON-NLS-2$ //$NON-NLS-3$
+
         try {
             if(isWindows()) {
-                new ProcessBuilder("explorer.exe", "/select," + file).start(); //$NON-NLS-1$ //$NON-NLS-2$
+                new ProcessBuilder("explorer.exe", "/select," + s).start(); //$NON-NLS-1$ //$NON-NLS-2$
             }
             else if(isMac()) {
-                Runtime.getRuntime().exec("open -R " + file); //$NON-NLS-1$
+                Runtime.getRuntime().exec("open -R " + s); //$NON-NLS-1$
             }
         }
         catch(IOException ex) {
